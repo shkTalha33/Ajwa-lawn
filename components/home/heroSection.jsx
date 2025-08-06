@@ -1,0 +1,191 @@
+import { lady1, lady2 } from "@/public/assets/images";
+import { Button } from "@heroui/button";
+import Image from "next/image";
+import Link from "next/link";
+import { BsInstagram } from "react-icons/bs";
+import { FaFacebook, FaTwitter } from "react-icons/fa6";
+import Topbar from "../Topbar";
+
+const HeroSection = () => {
+  return (
+    <section className="overflow-hidden">
+      {/* Top banner */}
+      <Topbar />
+
+      {/* Main hero content */}
+      <div className="flex flex-wrap p-4 sm:p-6 md:p-8 p-lg:-10 -m-4 container mx-auto">
+        <div className="w-full lg:w-5/12 lg:p-4">
+          <div className="py-6">
+            {/* Social media icons */}
+            <div className="flex items-center flex-wrap gap-6 mb-4">
+              <div className="w-16 h-px bg-gray-900"></div>
+              <Link
+                href="/"
+                className="hover:opacity-80 transition duration-200"
+              >
+                <BsInstagram className="text-[22px]" />
+              </Link>
+              <Link
+                href="/"
+                className="hover:opacity-80 transition duration-200"
+              >
+                <FaFacebook className="text-[22px]" />
+              </Link>
+              <Link
+                href="/"
+                className="hover:opacity-80 transition duration-200"
+              >
+                <FaTwitter className="text-[22px]" />
+              </Link>
+            </div>
+
+            {/* Main heading */}
+            <h1 className="nunito_semibold uppercase extra_big_heading max-w-lg mb-3 lg:mb-6">
+              <span className="text-brand-primary">Fashion</span> Trends and
+              Styles
+            </h1>
+
+            {/* Description */}
+            <p className="text-brand-muted text-lg poppins_regular mb-5 sm:mb-8 lg:mb-12 max-w-lg">
+              Discover a Wide Range of Fashion Options, Including Clothing,
+              Shoes, Accessories, and More
+            </p>
+
+            {/* Action buttons */}
+            <div className="flex flex-wrap gap-4">
+              <Button
+                as={Link}
+                href="/"
+                className="bg-brand-primary rounded-xl text-white poppins_semibold px-8 h-10 sm:h-12 inline-flex items-center text-base md:text-lg transition duration-200"
+              >
+                Shop Now
+              </Button>
+            </div>
+          </div>
+        </div>
+
+        {/* Hero images */}
+        <div className="w-full lg:w-7/12">
+          <div className="flex gap-2">
+            {/* Main image */}
+            <div className="w-full xs:w-8/12">
+              <Link href="#" className="group">
+                <div className="relative overflow-hidden rounded-2xl !h-[400px] sm:!h-[550px]">
+                  <Image
+                    src={lady2}
+                    alt="T-shirt Woman"
+                    fill
+                    className="rounded-2xl object-cover object-top transform group-hover:scale-105 transition duration-200"
+                  />
+
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
+                    <h2 className="nunito_semibold big_heading uppercase text-white text-center">
+                      t-shirt woman
+                    </h2>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            {/* Side images */}
+            <div className="w-1/2 xs:w-2/12">
+              <Link href="/" className="group">
+                <div className="relative overflow-hidden rounded-2xl !h-[400px] sm:!h-[550px]">
+                  <Image
+                    src={lady1}
+                    alt="Trending Fashion"
+                    fill
+                    className="rounded-2xl object-cover object-top transform group-hover:scale-105 transition duration-200"
+                  />
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <h2 className="big_heading roboto_semibold uppercase text-white text-center transform -rotate-90 whitespace-nowrap">
+                      #Trending 2025
+                    </h2>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            <div className="w-1/2 xs:w-2/12">
+              <Link href="#" className="group">
+                <div className="relative overflow-hidden rounded-2xl !h-[400px] sm:!h-[550px]">
+                  <Image
+                    src={lady2}
+                    alt="Trending Fashion"
+                    fill
+                    className="rounded-2xl object-cover object-top transform group-hover:scale-105 transition duration-200"
+                  />
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <h2 className="big_heading roboto_semibold uppercase text-white text-center transform -rotate-90 whitespace-nowrap">
+                      #Trending 2025
+                    </h2>
+                  </div>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Brand logos section */}
+      {/* <div className="flex flex-wrap items-center p-10 -m-4">
+        <div className="w-1/2 md:w-1/3 lg:w-1/6 p-4">
+          <Image
+            src={house1}
+            alt="Chanel"
+            width={56}
+            height={56}
+            className="mx-auto flex-shrink-0 h-14 w-auto"
+          />
+        </div>
+        <div className="w-1/2 md:w-1/3 lg:w-1/6 p-4">
+          <Image
+            src={house2}
+            alt="Sony"
+            width={80}
+            height={80}
+            className="mx-auto flex-shrink-0 h-20 w-auto"
+          />
+        </div>
+        <div className="w-1/2 md:w-1/3 lg:w-1/6 p-4">
+          <Image
+            src={house2}
+            alt="Sony"
+            width={80}
+            height={80}
+            className="mx-auto flex-shrink-0 h-20 w-auto"
+          />
+        </div>
+        <div className="w-1/2 md:w-1/3 lg:w-1/6 p-4">
+          <Image
+            src={house2}
+            alt="Puma"
+            width={44}
+            height={44}
+            className="mx-auto flex-shrink-0 h-11 w-auto"
+          />
+        </div>
+        <div className="w-1/2 md:w-1/3 lg:w-1/6 p-4">
+          <Image
+            src={house2}
+            alt="Nike"
+            width={80}
+            height={80}
+            className="mx-auto flex-shrink-0 h-20 w-auto"
+          />
+        </div>
+        <div className="w-1/2 md:w-1/3 lg:w-1/6 p-4">
+          <Image
+            src={house2}
+            alt="Adidas"
+            width={56}
+            height={56}
+            className="mx-auto flex-shrink-0 h-14 w-auto"
+          />
+        </div>
+      </div> */}
+    </section>
+  );
+};
+
+export default HeroSection;
