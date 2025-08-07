@@ -1,12 +1,45 @@
-import { lady1, lady2 } from "@/public/assets/images";
+"use client";
+import {
+  dress1,
+  dress2,
+  dress3,
+  dress4,
+  dress5,
+  dress6,
+  dress7,
+  dress8,
+  dress9,
+} from "@/public/assets/images";
 import { Button } from "@heroui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { BsInstagram } from "react-icons/bs";
 import { FaFacebook, FaTwitter } from "react-icons/fa6";
 import Topbar from "../Topbar";
 
 const HeroSection = () => {
+  const [hoveredIndex, setHoveredIndex] = useState(0);
+  const images = [
+    {
+      src: dress8,
+      alt: "T-shirt Woman",
+      title: "t-shirt woman",
+      href: "#",
+    },
+    {
+      src: dress2,
+      alt: "Trending Fashion",
+      title: "#Trending 2025",
+      href: "/",
+    },
+    {
+      src: dress5,
+      alt: "Trending Fashion",
+      title: "#Trending 2025",
+      href: "#",
+    },
+  ];
   return (
     <section className="overflow-hidden">
       {/* Top banner */}
@@ -20,19 +53,19 @@ const HeroSection = () => {
             <div className="flex items-center flex-wrap gap-6 mb-4">
               <div className="w-16 h-px bg-gray-900"></div>
               <Link
-                href="/"
+                href="#"
                 className="hover:opacity-80 transition duration-200"
               >
                 <BsInstagram className="text-[22px]" />
               </Link>
               <Link
-                href="/"
+                href="#"
                 className="hover:opacity-80 transition duration-200"
               >
                 <FaFacebook className="text-[22px]" />
               </Link>
               <Link
-                href="/"
+                href="#"
                 className="hover:opacity-80 transition duration-200"
               >
                 <FaTwitter className="text-[22px]" />
@@ -66,63 +99,35 @@ const HeroSection = () => {
 
         {/* Hero images */}
         <div className="w-full lg:w-7/12">
-          <div className="flex gap-2">
-            {/* Main image */}
-            <div className="w-full xs:w-8/12">
-              <Link href="#" className="group">
-                <div className="relative overflow-hidden rounded-2xl !h-[400px] sm:!h-[550px]">
-                  <Image
-                    src={lady2}
-                    alt="T-shirt Woman"
-                    fill
-                    className="rounded-2xl object-cover object-top transform group-hover:scale-105 transition duration-200"
-                  />
-
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full">
-                    <h2 className="nunito_semibold big_heading uppercase text-white text-center">
-                      t-shirt woman
-                    </h2>
+          <div className="flex items-center h-full gap-2">
+            {images.map((image, index) => (
+              <div
+                key={index}
+                className={`transition-all duration-500 ${
+                  hoveredIndex === index
+                    ? "w-full xs:w-6/12" // Large when hovered or default (index 0)
+                    : "w-1/2 xs:w-3/12" // Small when not hovered
+                }`}
+                onMouseEnter={() => setHoveredIndex(index)}
+              >
+                <Link href={image.href} className="group">
+                  <div className="relative overflow-hidden rounded-2xl !h-[400px] sm:!h-[550px]">
+                    <Image
+                      src={image.src || "/placeholder.svg"}
+                      alt={image.alt}
+                      fill
+                      className="rounded-2xl object-cover object-top transform group-hover:scale-105 transition duration-200"
+                    />
+                    {/* Perfect center positioning */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <h2 className="big_heading uppercase text-white nunito_semibold -rotate-90 whitespace-nowrap">
+                        {image.title}
+                      </h2>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </div>
-
-            {/* Side images */}
-            <div className="w-1/2 xs:w-2/12">
-              <Link href="/" className="group">
-                <div className="relative overflow-hidden rounded-2xl !h-[400px] sm:!h-[550px]">
-                  <Image
-                    src={lady1}
-                    alt="Trending Fashion"
-                    fill
-                    className="rounded-2xl object-cover object-top transform group-hover:scale-105 transition duration-200"
-                  />
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <h2 className="big_heading roboto_semibold uppercase text-white text-center transform -rotate-90 whitespace-nowrap">
-                      #Trending 2025
-                    </h2>
-                  </div>
-                </div>
-              </Link>
-            </div>
-
-            <div className="w-1/2 xs:w-2/12">
-              <Link href="#" className="group">
-                <div className="relative overflow-hidden rounded-2xl !h-[400px] sm:!h-[550px]">
-                  <Image
-                    src={lady2}
-                    alt="Trending Fashion"
-                    fill
-                    className="rounded-2xl object-cover object-top transform group-hover:scale-105 transition duration-200"
-                  />
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <h2 className="big_heading roboto_semibold uppercase text-white text-center transform -rotate-90 whitespace-nowrap">
-                      #Trending 2025
-                    </h2>
-                  </div>
-                </div>
-              </Link>
-            </div>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </div>
