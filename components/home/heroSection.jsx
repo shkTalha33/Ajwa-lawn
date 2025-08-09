@@ -1,15 +1,5 @@
 "use client";
-import {
-  dress1,
-  dress2,
-  dress3,
-  dress4,
-  dress5,
-  dress6,
-  dress7,
-  dress8,
-  dress9,
-} from "@/public/assets/images";
+import { dress10, dress5, dress8 } from "@/public/assets/images";
 import { Button } from "@heroui/button";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,7 +18,7 @@ const HeroSection = () => {
       href: "#",
     },
     {
-      src: dress2,
+      src: dress10,
       alt: "Trending Fashion",
       title: "#Trending 2025",
       href: "/",
@@ -51,7 +41,7 @@ const HeroSection = () => {
           <div className="py-6">
             {/* Social media icons */}
             <div className="flex items-center flex-wrap gap-6 mb-4">
-              <div className="w-16 h-px bg-gray-900"></div>
+              <div className="w-16 h-px bg-gray-900 dark:bg-gray-50"></div>
               <Link
                 href="#"
                 className="hover:opacity-80 transition duration-200"
@@ -89,7 +79,7 @@ const HeroSection = () => {
               <Button
                 as={Link}
                 href="/"
-                className="bg-brand-primary rounded-xl text-white poppins_semibold px-8 h-10 sm:h-12 inline-flex items-center text-base md:text-lg transition duration-200"
+                className="bg-brand-primary rounded-xl text-white poppins_semibold px-8 sm:px-10 md:px-12 h-10 sm:h-[50px] inline-flex items-center text-base md:text-xl transition duration-200"
               >
                 Shop Now
               </Button>
@@ -116,7 +106,7 @@ const HeroSection = () => {
                       src={image.src || "/placeholder.svg"}
                       alt={image.alt}
                       fill
-                      className="rounded-2xl object-cover object-top transform group-hover:scale-105 transition duration-200"
+                      className="rounded-2xl object-cover object-top transform transition duration-200"
                     />
                     {/* Perfect center positioning */}
                     <div className="absolute inset-0 flex items-center justify-center">

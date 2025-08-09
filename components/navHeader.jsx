@@ -154,7 +154,7 @@ export default function NavHeader() {
     { name: "Summer Collection", href: "/summer-collection" },
     { name: "Winter Collection", href: "/winter-collection" },
     { name: "New Arrival", href: "/new-arrival" },
-    { name: "Top Seller", href: "/top-seller" },
+    { name: "Trending", href: "/trending" },
     { name: "Settings", href: "/settings/account-details" },
     { name: "Logout", href: "/logout" },
     { name: "Login", href: "/login" },
@@ -214,9 +214,9 @@ export default function NavHeader() {
               New Arrival
             </Link>
           </NavbarItem>
-          <NavbarItem isActive={isActive === "/top-seller"}>
-            <Link color="foreground" href="/top-seller">
-              Top Seller
+          <NavbarItem isActive={isActive === "/trending"}>
+            <Link color="foreground" href="/trending">
+              Trending
             </Link>
           </NavbarItem>
         </NavbarContent>

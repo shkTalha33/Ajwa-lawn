@@ -8,7 +8,7 @@ import React from "react";
 const FashionSection = () => {
   return (
     <section className="py-8 md:py-16 bg-brand-light dark:bg-brand-dark">
-      <div className="container mx-auto px-2 sm:px-4">
+      <div className="container mx-auto px-4">
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
           {/* Title Section - Full width on small screens, half on larger screens */}
           <div className="w-full sm:w-1/2">

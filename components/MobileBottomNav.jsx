@@ -2,116 +2,42 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 // Lucide React Icons
-import { Home, Sun, Snowflake, Sparkles } from "lucide-react";
 // React Icons as alternatives
-import { BsHouseDoor, BsSun, BsSnow, BsStars, BsStar } from "react-icons/bs";
-import { RiSunLine, RiSnowflakeLine } from "react-icons/ri";
-import { TbSun, TbSnowflake, TbSparkles } from "react-icons/tb";
+import { RiSunFill } from "react-icons/ri";
+import { GiStarsStack } from "react-icons/gi"; // For 'New Arrival' filled style
+import { BsHouseDoorFill, BsSnow, BsStarFill } from "react-icons/bs";
+import { Home, Moon, Sparkles, Sun, TrendingUp } from "lucide-react";
 
 export default function MobileBottomNav() {
   const pathname = usePathname();
 
-  // const navItems = [
-  //   {
-  //     name: "Home",
-  //     icon: <Home className="w-6 h-6" />, // Perfect for home
-  //     path: "/",
-  //   },
-  //   {
-  //     name: "Summer Collection",
-  //     icon: <Sun className="w-6 h-6" />, // Sun icon for summer
-  //     path: "/summer-collection",
-  //   },
-  //   {
-  //     name: "Winter Collection",
-  //     icon: <Snowflake className="w-6 h-6" />, // Snowflake for winter
-  //     path: "/winter-collection",
-  //   },
-  //   {
-  //     name: "New Arrival",
-  //     icon: <Sparkles className="w-6 h-6" />, // Sparkles for new/special items
-  //     path: "/new-arrival",
-  //   },
-  // ];
-
-  // Alternative icon sets you can use:
-
-  // Option 2: React Icons (BS)
   const navItems = [
     {
       name: "Home",
-      icon: <BsHouseDoor className="w-5 h-5" />,
+      icon: <Home className="w-5 h-5" />,
       path: "/",
     },
     {
       name: "Summer",
-      icon: <RiSunLine className="w-5 h-5" />,
+      icon: <Sun className="w-5 h-5" />,
       path: "/summer-collection",
     },
     {
       name: "Winter",
-      icon: <BsSnow className="w-5 h-5" />,
+      icon: <Moon className="w-5 h-5" />,
       path: "/winter-collection",
     },
     {
       name: "New Arrival",
-      icon: <BsStars className="w-5 h-5" />,
+      icon: <Sparkles className="w-5 h-5" />,
       path: "/new-arrival",
     },
     {
-      name: "Top seller",
-      icon: <BsStar className="w-5 h-5" />,
-      path: "/top-seller",
+      name: "Trending",
+      icon: <TrendingUp className="w-5 h-5" />,
+      path: "/trending",
     },
   ];
-
-  // Option 3: Tabler Icons (TB)
-  // const navItems = [
-  //   {
-  //     name: "Home",
-  //     icon: <BsHouseDoor className="w-6 h-6" />,
-  //     path: "/",
-  //   },
-  //   {
-  //     name: "Summer Collection",
-  //     icon: <TbSun className="w-6 h-6" />,
-  //     path: "/summer-collection",
-  //   },
-  //   {
-  //     name: "Winter Collection",
-  //     icon: <TbSnowflake className="w-6 h-6" />,
-  //     path: "/winter-collection",
-  //   },
-  //   {
-  //     name: "New Arrival",
-  //     icon: <TbSparkles className="w-6 h-6" />,
-  //     path: "/new-arrival",
-  //   },
-  // ];
-
-  // Option 4: Remix Icons (RI)
-  // const navItems = [
-  //   {
-  //     name: "Home",
-  //     icon: <BsHouseDoor className="w-6 h-6" />,
-  //     path: "/",
-  //   },
-  //   {
-  //     name: "Summer Collection",
-  //     icon: <RiSunLine className="w-6 h-6" />,
-  //     path: "/summer-collection",
-  //   },
-  //   {
-  //     name: "Winter Collection",
-  //     icon: <RiSnowflakeLine className="w-6 h-6" />,
-  //     path: "/winter-collection",
-  //   },
-  //   {
-  //     name: "New Arrival",
-  //     icon: <BsStars className="w-6 h-6" />,
-  //     path: "/new-arrival",
-  //   },
-  // ];
 
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-brand-white dark:bg-brand-black border-t border-gray-200 dark:border-gray-600 z-50 sm:hidden">
