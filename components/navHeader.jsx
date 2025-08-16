@@ -34,6 +34,8 @@ import ApiFunction from "./api/apiFunction";
 import { handleError } from "./api/errorHandler";
 import { useMediaQuery } from "react-responsive";
 import { FiShoppingCart } from "react-icons/fi";
+import CartSidebar from "./cartSidebar";
+import { MdOutlineShoppingBag } from "react-icons/md";
 
 export const AcmeLogo = () => {
   return (
@@ -63,6 +65,7 @@ export default function NavHeader() {
   const { theme, setTheme } = useTheme();
   const [showTranslate, setShowTranslate] = useState(false);
   const translateRef = useRef(null);
+  const [showCart, setShowCart] = useState(false);
   const { get } = ApiFunction();
   const isMobile = useMediaQuery({ maxWidth: 640 });
 
@@ -220,7 +223,7 @@ export default function NavHeader() {
             </Link>
           </NavbarItem>
         </NavbarContent>
-        <NavbarContent justify="end">
+        <NavbarContent justify="end" className="!gap-2">
           <NavbarItem>
             <Button
               isIconOnly
@@ -236,10 +239,13 @@ export default function NavHeader() {
               )}
             </Button>
           </NavbarItem>
-          <NavbarItem className="hidden lg:flex">
-            <Link href="/login">
-              <FiShoppingCart size={20} />
-            </Link>
+          <NavbarItem className="">
+            <button
+              onClick={() => setShowCart(!showCart)}
+              className="cursor-pointer"
+            >
+              <MdOutlineShoppingBag size={22} />
+            </button>
           </NavbarItem>
         </NavbarContent>
 
@@ -264,6 +270,7 @@ export default function NavHeader() {
           ))}
         </NavbarMenu>
       </Navbar>
+      <CartSidebar isOpen={showCart} onClose={() => setShowCart(false)} />
 
       {/* Add padding to body to compensate for fixed navbar */}
       <div className="pt-16"></div>

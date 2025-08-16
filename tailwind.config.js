@@ -31,6 +31,9 @@ const config = {
         medium: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
         dark: "0 10px 15px -3px rgba(0, 0, 0, 0.2)",
       },
+      backgroundImage: {
+        primaryGradient: "linear-gradient(to right, #B22222, #7A1A1A)",
+      },
       // border radius
       borderRadius: {
         light: "0.25rem", // 4px
