@@ -107,7 +107,7 @@ export default function NavHeader() {
         !translateRef.current.contains(event.target)
       ) {
         const clickedOnGlobeIcon = event.target.closest(
-          "button, .goog-te-menu-value"
+          "button, .goog-te-menu-value",
         );
         if (!clickedOnGlobeIcon) {
           setShowTranslate(false);
@@ -239,8 +239,8 @@ export default function NavHeader() {
                   index === 2
                     ? "warning"
                     : index === menuItems.length - 1
-                    ? "danger"
-                    : "foreground"
+                      ? "danger"
+                      : "foreground"
                 }
                 href={item.href}
                 size="lg"

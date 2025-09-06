@@ -48,6 +48,7 @@
     "axios": "^1.9.0",
     "browser-image-compression": "^2.0.2",
     "clsx": "2.1.1",
+    "critters": "^0.0.23",
     "date-fn": "^0.0.2",
     "date-fns": "^4.1.0",
     "debounce": "^2.2.0",

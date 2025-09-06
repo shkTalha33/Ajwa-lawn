@@ -29,13 +29,13 @@ const CartPage = () => {
     itemId,
     selectedColor,
     selectedSize,
-    change
+    change,
   ) => {
     const item = items.find(
       (item) =>
         item.id === itemId &&
         item.selectedColor === selectedColor &&
-        item.selectedSize === selectedSize
+        item.selectedSize === selectedSize,
     );
 
     if (item) {
@@ -49,7 +49,7 @@ const CartPage = () => {
             selectedColor,
             selectedSize,
             quantity: newQuantity,
-          })
+          }),
         );
       }
     }
@@ -83,7 +83,7 @@ const CartPage = () => {
           applyDiscount({
             code: discountCode,
             percentage: discountCodes[discountCode.toUpperCase()],
-          })
+          }),
         );
       }
     }
@@ -259,7 +259,7 @@ const CartPage = () => {
                             handleRemoveItem(
                               item.id,
                               item.selectedColor,
-                              item.selectedSize
+                              item.selectedSize,
                             )
                           }
                           className="p-2 text-brand-muted hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors"
@@ -292,7 +292,7 @@ const CartPage = () => {
                                 item.id,
                                 item.selectedColor,
                                 item.selectedSize,
-                                -1
+                                -1,
                               )
                             }
                             className="p-2 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-full transition-colors"
@@ -308,7 +308,7 @@ const CartPage = () => {
                                 item.id,
                                 item.selectedColor,
                                 item.selectedSize,
-                                1
+                                1,
                               )
                             }
                             className="p-2 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-full transition-colors"

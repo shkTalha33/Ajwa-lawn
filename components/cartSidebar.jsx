@@ -18,13 +18,13 @@ export default function CartSidebar({ isOpen, onClose }) {
     itemId,
     selectedColor,
     selectedSize,
-    change
+    change,
   ) => {
     const item = items.find(
       (item) =>
         item.id === itemId &&
         item.selectedColor === selectedColor &&
-        item.selectedSize === selectedSize
+        item.selectedSize === selectedSize,
     );
 
     if (item) {
@@ -38,7 +38,7 @@ export default function CartSidebar({ isOpen, onClose }) {
             selectedColor,
             selectedSize,
             quantity: newQuantity,
-          })
+          }),
         );
       }
     }
@@ -151,7 +151,7 @@ export default function CartSidebar({ isOpen, onClose }) {
                             handleRemoveItem(
                               item.id,
                               item.selectedColor,
-                              item.selectedSize
+                              item.selectedSize,
                             )
                           }
                           className="p-1 sm:p-1.5 text-gray-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-brand-dark rounded-lg transition-all duration-200 flex-shrink-0"
@@ -167,7 +167,7 @@ export default function CartSidebar({ isOpen, onClose }) {
                                 item.id,
                                 item.selectedColor,
                                 item.selectedSize,
-                                -1
+                                -1,
                               )
                             }
                             className="p-1.5 hover:bg-gray-100 dark:hover:bg-brand-dark rounded-full transition-colors duration-200"
@@ -183,7 +183,7 @@ export default function CartSidebar({ isOpen, onClose }) {
                                 item.id,
                                 item.selectedColor,
                                 item.selectedSize,
-                                1
+                                1,
                               )
                             }
                             className="p-1.5 hover:bg-gray-100 dark:hover:bg-brand-dark rounded-full transition-colors duration-200"

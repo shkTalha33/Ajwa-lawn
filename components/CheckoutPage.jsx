@@ -44,7 +44,7 @@ const Checkout = () => {
     phone: Yup.string()
       .matches(
         /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/,
-        "Please enter a valid phone number"
+        "Please enter a valid phone number",
       )
       .required("Phone number is required"),
     city: Yup.string().required("City is required"),

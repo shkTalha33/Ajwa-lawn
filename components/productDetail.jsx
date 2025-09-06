@@ -218,7 +218,7 @@ export default function ProductDetailPage({ productId }) {
                     setSelectedImage(
                       selectedImage > 0
                         ? selectedImage - 1
-                        : productImages.length - 1
+                        : productImages.length - 1,
                     )
                   }
                 >
@@ -231,7 +231,7 @@ export default function ProductDetailPage({ productId }) {
                     setSelectedImage(
                       selectedImage < productImages.length - 1
                         ? selectedImage + 1
-                        : 0
+                        : 0,
                     )
                   }
                 >

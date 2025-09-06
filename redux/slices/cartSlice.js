@@ -17,7 +17,8 @@ const cartSlice = createSlice({
     addToCart: (state, action) => {
       const { product, selectedColor, quantity = 1 } = action.payload;
       const existingItemIndex = state.items.findIndex(
-        (item) => item.id === product.id && item.selectedColor === selectedColor
+        (item) =>
+          item.id === product.id && item.selectedColor === selectedColor,
       );
 
       if (existingItemIndex >= 0) {
@@ -45,7 +46,7 @@ const cartSlice = createSlice({
     removeFromCart: (state, action) => {
       const { itemId, selectedColor } = action.payload;
       state.items = state.items.filter(
-        (item) => !(item.id === itemId && item.selectedColor === selectedColor)
+        (item) => !(item.id === itemId && item.selectedColor === selectedColor),
       );
 
       // Recalculate totals
@@ -55,14 +56,14 @@ const cartSlice = createSlice({
     updateQuantity: (state, action) => {
       const { itemId, selectedColor, quantity } = action.payload;
       const item = state.items.find(
-        (item) => item.id === itemId && item.selectedColor === selectedColor
+        (item) => item.id === itemId && item.selectedColor === selectedColor,
       );
 
       if (item) {
         if (quantity <= 0) {
           state.items = state.items.filter(
             (item) =>
-              !(item.id === itemId && item.selectedColor === selectedColor)
+              !(item.id === itemId && item.selectedColor === selectedColor),
           );
         } else {
           item.quantity = quantity;
@@ -89,11 +90,11 @@ const cartSlice = createSlice({
     calculateTotals: (state) => {
       state.totalItems = state.items.reduce(
         (total, item) => total + item.quantity,
-        0
+        0,
       );
       state.subtotal = state.items.reduce(
         (total, item) => total + item.price * item.quantity,
-        0
+        0,
       );
 
       // Calculate tax (8% of subtotal)

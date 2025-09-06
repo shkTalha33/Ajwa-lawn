@@ -247,7 +247,7 @@ const BestSellingProduct = () => {
                       {Math.round(
                         ((product.originalPrice - product.price) /
                           product.originalPrice) *
-                          100
+                          100,
                       )}
                       % OFF
                     </div>

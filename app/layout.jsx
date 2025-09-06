@@ -91,7 +91,7 @@ export default function RootLayout({ children }) {
           "overscroll-x-none",
           poppins.variable,
           roboto.variable,
-          nunito.variable
+          nunito.variable,
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>

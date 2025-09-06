@@ -160,7 +160,7 @@ const GoogleTranslate = ({
             autoDisplay: false,
             multilanguagePage: true,
           },
-          "google_translate_element"
+          "google_translate_element",
         );
         setIsLoaded(true);
       }
@@ -176,7 +176,7 @@ const GoogleTranslate = ({
     return () => {
       // Cleanup
       const existingScript = document.querySelector(
-        'script[src*="translate.google.com"]'
+        'script[src*="translate.google.com"]',
       );
       if (existingScript) {
         existingScript.remove();

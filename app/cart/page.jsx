@@ -39,7 +39,7 @@ export default function CartPage() {
   const dispatch = useDispatch();
   const [isMounted, setIsMounted] = useState(false);
   const { items, totalItems, subtotal, shipping, tax, total } = useSelector(
-    (state) => state.cart
+    (state) => state.cart,
   );
 
   useEffect(() => {
@@ -48,7 +48,7 @@ export default function CartPage() {
 
   const handleQuantityChange = (itemId, selectedColor, change) => {
     const item = items.find(
-      (item) => item.id === itemId && item.selectedColor === selectedColor
+      (item) => item.id === itemId && item.selectedColor === selectedColor,
     );
 
     if (item) {
@@ -62,7 +62,7 @@ export default function CartPage() {
             itemId,
             selectedColor,
             quantity: newQuantity,
-          })
+          }),
         );
       }
     }
@@ -233,7 +233,7 @@ export default function CartPage() {
                                       handleQuantityChange(
                                         item.id,
                                         item.selectedColor,
-                                        -1
+                                        -1,
                                       )
                                     }
                                     className="p-2 hover:bg-whitedark:hover:bg-gray-600 rounded-md transition-colors duration-200"
@@ -248,7 +248,7 @@ export default function CartPage() {
                                       handleQuantityChange(
                                         item.id,
                                         item.selectedColor,
-                                        1
+                                        1,
                                       )
                                     }
                                     className="p-2 hover:bg-white dark:hover:bg-gray-600 rounded-md transition-colors duration-200"

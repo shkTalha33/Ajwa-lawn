@@ -20,7 +20,7 @@ export default function ProductCard({ product }) {
         selectedColor,
         selectedSize,
         quantity: 1,
-      })
+      }),
     );
     toast.success(`${product.name} is add to cart successfully`);
   };
@@ -134,7 +134,7 @@ export default function ProductCard({ product }) {
               {Math.round(
                 ((product.originalPrice - product.price) /
                   product.originalPrice) *
-                  100
+                  100,
               )}
               % OFF
             </div>
