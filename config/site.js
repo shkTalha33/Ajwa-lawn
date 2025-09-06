@@ -1,11 +1,19 @@
 export const siteConfig = {
-  name: "Real Estate",
+  name: "Ajwa Fashion",
   description:
-    "Buy, sell, and explore homes with ease. Discover your dream property or get the best value for your home, all in one place.",
+    "Discover premium fashion and elegant clothing at Ajwa Fashion. Shop the latest trends in women's fashion with free delivery across Pakistan. Quality garments for every occasion.",
+  keywords:
+    "fashion, clothing, women's fashion, Pakistan, online shopping, dresses, elegant, premium, style, trendy",
+  url: "https://ajwafashion.com",
+  ogImage: "/og-image.jpg",
   navItems: [
     {
       label: "Home",
       href: "/",
+    },
+    {
+      label: "Collections",
+      href: "/collections",
     },
     {
       label: "About",
@@ -14,10 +22,6 @@ export const siteConfig = {
     {
       label: "Contact",
       href: "/contact",
-    },
-    {
-      label: "Listings",
-      href: "/listings",
     },
   ],
   navMenuItems: [

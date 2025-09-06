@@ -1,214 +1,192 @@
 "use client";
 import { motion } from "framer-motion";
 import {
-  FaShieldAlt,
-  FaInfoCircle,
-  FaUserLock,
-  FaDatabase,
-  FaCookieBite,
-} from "react-icons/fa";
-import Image from "next/image";
-import { contact, privacy } from "@/public/assets/images";
+  Shield,
+  Lock,
+  Eye,
+  Database,
+  Users,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
+import Link from "next/link";
+import Head from "next/head";
 
-const PrivacyPolicy = () => {
+export default function PrivacyPolicy() {
+  const sections = [
+    {
+      icon: <Database className="h-6 w-6" />,
+      title: "Information We Collect",
+      content: [
+        "Personal information you provide when creating an account (name, email, phone number)",
+        "Payment information processed securely through our payment partners",
+        "Shipping and billing addresses for order fulfillment",
+        "Communication preferences and customer service interactions",
+        "Website usage data and analytics to improve our services",
+      ],
+    },
+    {
+      icon: <Eye className="h-6 w-6" />,
+      title: "How We Use Your Information",
+      content: [
+        "Process and fulfill your orders efficiently",
+        "Provide customer support and respond to inquiries",
+        "Send order updates and shipping notifications",
+        "Improve our website functionality and user experience",
+        "Send promotional offers (only with your consent)",
+        "Comply with legal obligations and prevent fraud",
+      ],
+    },
+    {
+      icon: <Shield className="h-6 w-6" />,
+      title: "Data Protection & Security",
+      content: [
+        "We implement industry-standard SSL encryption for all data transmission",
+        "Payment information is processed through secure, PCI-compliant partners",
+        "Regular security audits and updates to protect your data",
+        "Limited access to personal information on a need-to-know basis",
+        "Secure data storage with encrypted databases",
+        "Regular backups to prevent data loss",
+      ],
+    },
+    {
+      icon: <Users className="h-6 w-6" />,
+      title: "Information Sharing",
+      content: [
+        "We never sell your personal information to third parties",
+        "Share data only with trusted service providers (shipping, payment processing)",
+        "Disclose information only when required by law or to protect our rights",
+        "Anonymous, aggregated data may be used for analytics and improvements",
+        "Your consent is required for any other data sharing purposes",
+      ],
+    },
+    {
+      icon: <Lock className="h-6 w-6" />,
+      title: "Your Rights & Choices",
+      content: [
+        "Access and update your personal information at any time",
+        "Opt-out of marketing communications easily",
+        "Request deletion of your account and associated data",
+        "Export your data in a portable format",
+        "Withdraw consent for data processing where applicable",
+        "File complaints with relevant data protection authorities",
+      ],
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-brand-light dark:bg-brand-dark">
-      {/* Hero Section */}
-      <section className="relative text-white py-28 overflow-hidden">
-        <div className="absolute inset-0 w-full h-full">
-          <Image
-            src={privacy}
-            alt="Privacy Policy"
-            layout="fill"
-            objectFit="cover"
-            quality={100}
-            priority
-          />
-          <div className="absolute inset-0 bg-black/50"></div>
-        </div>
-        <div className="relative container mx-auto px-4 text-center">
-          <h1 className="text-5xl poppins_semibold mb-4">
-            Privacy <span className="text-brand-warning">Policy</span>
-          </h1>
-          <p className="text-lg text-white/90 nunito_regular">
-            Last Updated: May 20, 2025
-          </p>
-        </div>
-      </section>
-
-      {/* Main Content */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+    <>
+      <Head>
+        <title>Privacy Policy - Ajwa Fashion</title>
+        <meta
+          name="description"
+          content="Learn how Ajwa Fashion protects your privacy and handles your personal information. Our comprehensive privacy policy covers data collection, usage, and protection."
+        />
+        <meta
+          name="keywords"
+          content="privacy policy, data protection, personal information, Ajwa Fashion, privacy rights, data security"
+        />
+        <meta property="og:title" content="Privacy Policy - Ajwa Fashion" />
+        <meta
+          property="og:description"
+          content="Learn how Ajwa Fashion protects your privacy and handles your personal information."
+        />
+        <meta property="og:type" content="website" />
+        <meta name="robots" content="index, follow" />
+      </Head>
+      <div className="min-h-screen bg-brand-light dark:bg-brand-dark">
+        <div className="container mx-auto px-4 py-12">
+          {/* Breadcrumb */}
           <motion.div
-            className="max-w-4xl mx-auto bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex items-center gap-2 text-sm mb-8"
+          >
+            <Link
+              href="/"
+              className="text-brand-muted hover:text-brand-primary transition-colors poppins_medium"
+            >
+              Home
+            </Link>
+            <span className="text-brand-muted">/</span>
+            <span className="text-brand-primary poppins_medium">
+              Privacy Policy
+            </span>
+          </motion.div>
+
+          {/* Last Updated */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="bg-brand-white dark:bg-brand-dark border-0 shadow-light p-6 rounded-2xl mb-8"
           >
-            <div className="space-y-8">
-              {/* Introduction */}
-              <section className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <FaShieldAlt className="text-2xl text-brand-primary" />
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white poppins_medium">
-                    Introduction
-                  </h2>
-                </div>
-                <p className="text-gray-600 dark:text-gray-300 roboto_regular">
-                  Welcome to our Privacy Policy. Your privacy is critically
-                  important to us. This privacy policy outlines how we collect,
-                  use, and protect your personal information when you use our
-                  website and services.
-                </p>
-              </section>
-
-              {/* Information We Collect */}
-              <section className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <FaInfoCircle className="text-2xl text-brand-primary" />
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white poppins_medium">
-                    Information We Collect
-                  </h2>
-                </div>
-                <div className="space-y-4">
-                  <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                    Personal Information
-                  </h3>
-                  <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300 roboto_regular">
-                    <li>
-                      Name and contact details (email, phone number, address)
-                    </li>
-                    <li>Property preferences and requirements</li>
-                    <li>Payment and transaction information</li>
-                    <li>Communication preferences</li>
-                  </ul>
-
-                  <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4">
-                    Usage Data
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 roboto_regular">
-                    We automatically collect information about how you interact
-                    with our website, including:
-                  </p>
-                  <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300 roboto_regular">
-                    <li>IP address and device information</li>
-                    <li>Browser type and version</li>
-                    <li>Pages visited and time spent on site</li>
-                    <li>Search terms and preferences</li>
-                  </ul>
-                </div>
-              </section>
-
-              {/* How We Use Your Information */}
-              <section className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <FaDatabase className="text-2xl text-brand-primary" />
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white poppins_medium">
-                    How We Use Your Information
-                  </h2>
-                </div>
-                <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300 roboto_regular">
-                  <li>Provide and maintain our services</li>
-                  <li>Process transactions and send related information</li>
-                  <li>Respond to inquiries and provide customer support</li>
-                  <li>Improve our website and services</li>
-                  <li>Send promotional communications (with your consent)</li>
-                  <li>Monitor and analyze usage and trends</li>
-                  <li>Detect, prevent, and address technical issues</li>
-                </ul>
-              </section>
-
-              {/* Data Sharing and Disclosure */}
-              <section className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <FaUserLock className="text-2xl text-brand-primary" />
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white poppins_medium">
-                    Data Sharing and Disclosure
-                  </h2>
-                </div>
-                <p className="text-gray-600 dark:text-gray-300 roboto_regular">
-                  We may share your information with:
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300 roboto_regular">
-                  <li>
-                    Service providers who assist with our business operations
-                  </li>
-                  <li>
-                    Real estate agents and brokers to fulfill your requests
-                  </li>
-                  <li>Legal authorities when required by law</li>
-                  <li>Business transfers in case of merger or acquisition</li>
-                </ul>
-              </section>
-
-              {/* Cookies and Tracking */}
-              <section className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <FaCookieBite className="text-2xl text-brand-primary" />
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white poppins_medium">
-                    Cookies and Tracking Technologies
-                  </h2>
-                </div>
-                <p className="text-gray-600 dark:text-gray-300 roboto_regular">
-                  We use cookies and similar tracking technologies to track
-                  activity on our website and hold certain information to
-                  improve your experience. You can instruct your browser to
-                  refuse all cookies or to indicate when a cookie is being sent.
-                </p>
-              </section>
-
-              {/* Your Rights */}
-              <section className="space-y-4">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white poppins_medium">
-                  Your Data Protection Rights
-                </h2>
-                <p className="text-gray-600 dark:text-gray-300 roboto_regular">
-                  Depending on your location, you may have the right to:
-                </p>
-                <ul className="list-disc pl-6 space-y-2 text-gray-600 dark:text-gray-300 roboto_regular">
-                  <li>Access, update, or delete your personal information</li>
-                  <li>Rectify inaccurate or incomplete data</li>
-                  <li>Object to or restrict processing of your data</li>
-                  <li>Request data portability</li>
-                  <li>Withdraw consent at any time</li>
-                </ul>
-              </section>
-
-              {/* Changes to This Policy */}
-              <section className="space-y-4">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white poppins_medium">
-                  Changes to This Policy
-                </h2>
-                <p className="text-gray-600 dark:text-gray-300 roboto_regular">
-                  We may update our Privacy Policy from time to time. We will
-                  notify you of any changes by posting the new Privacy Policy on
-                  this page and updating the "Last Updated" date.
-                </p>
-              </section>
-
-              {/* Contact Us */}
-              <section className="space-y-4 pt-4">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white poppins_medium">
-                  Contact Us
-                </h2>
-                <p className="text-gray-600 dark:text-gray-300 roboto_regular">
-                  If you have any questions about this Privacy Policy, please
-                  contact us at:
-                </p>
-                <p className="text-gray-600 dark:text-gray-300 roboto_regular">
-                  Email: privacy@realestate.com
-                  <br />
-                  Phone: +1 (555) 123-4567
-                  <br />
-                  Address: 123 Real Estate Avenue, Suite 100, New York, NY 10001
-                </p>
-              </section>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center">
+                <Lock className="text-white text-sm" />
+              </div>
+              <h2 className="text-xl font-semibold text-brand-black dark:text-brand-white nunito_semibold">
+                Last Updated: December 2024
+              </h2>
             </div>
+            <p className="text-brand-muted poppins_regular">
+              This Privacy Policy describes how Ajwa Fashion ("we," "our," or
+              "us") collects, uses, and shares your personal information when
+              you use our website and services.
+            </p>
           </motion.div>
-        </div>
-      </section>
-    </div>
-  );
-};
 
-export default PrivacyPolicy;
+          {/* Main Content */}
+          <div className="space-y-8">
+            {sections.map((section, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                className="bg-brand-white dark:bg-brand-dark border-0 shadow-light p-6 rounded-2xl"
+              >
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-12 h-12 bg-brand-primary/10 rounded-xl flex items-center justify-center">
+                    <div className="text-brand-primary">{section.icon}</div>
+                  </div>
+                  <h3 className="text-2xl font-semibold text-brand-black dark:text-brand-white nunito_semibold">
+                    {section.title}
+                  </h3>
+                </div>
+                <ul className="space-y-3">
+                  {section.content.map((item, itemIndex) => (
+                    <li key={itemIndex} className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-brand-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <span className="text-brand-muted poppins_regular">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Back to Home */}
+          {/* <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.9 }}
+            className="text-center mt-8"
+          >
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 bg-brand-primary text-white px-6 py-3 rounded-xl hover:opacity-90 transition-opacity poppins_medium"
+            >
+              <Shield className="h-5 w-5" />
+              Back to Home
+            </Link>
+          </motion.div> */}
+        </div>
+      </div>
+    </>
+  );
+}

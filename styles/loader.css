@@ -16,19 +16,19 @@
 
 /* Background colors for each circle */
 .custom_loader .circle:nth-child(1) {
-  background-color: #90be6d;
+  background-color: #f2c4c4; /* lightest tint */
 }
 .custom_loader .circle:nth-child(2) {
-  background-color: #f9c74f;
+  background-color: #d96a6a; /* soft tint */
 }
 .custom_loader .circle:nth-child(3) {
-  background-color: #f8961e;
+  background-color: #b22222; /* main brand color */
 }
 .custom_loader .circle:nth-child(4) {
-  background-color: #f3722c;
+  background-color: #8b1a1a; /* deeper shade */
 }
 .custom_loader .circle:nth-child(5) {
-  background-color: #f94346;
+  background-color: #5c1111; /* darkest shade */
 }
 
 /* Pseudo-element for the pulsating effect */

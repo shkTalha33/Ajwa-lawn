@@ -78,10 +78,10 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-4">
               <Button
                 as={Link}
-                href="/"
-                className="bg-brand-primary rounded-xl text-white poppins_semibold px-8 sm:px-10 md:px-12 h-10 sm:h-[50px] inline-flex items-center text-base md:text-xl transition duration-200"
+                href="/new-arrival"
+                className="bg-primaryGradient rounded-xl text-white poppins_medium px-8 sm:px-10 md:px-16 h-10 sm:h-[45px] inline-flex items-center text-base md:text-xl transition duration-200"
               >
-                Shop Now
+                Discover Now
               </Button>
             </div>
           </div>

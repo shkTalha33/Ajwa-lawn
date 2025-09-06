@@ -1,3 +1,3 @@
-import { generalApiSlice } from "./generalSlice";
+import cartReducer from "./cartSlice";
 
-export { generalApiSlice };
+export { cartReducer };

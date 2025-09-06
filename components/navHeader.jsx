@@ -22,16 +22,12 @@ import {
   MdOutlineLogout,
   FaUser,
 } from "@/public/assets/icons/index";
-import { setLogout, setUserData } from "@/redux/slices/loginSlice";
 import debounce from "debounce";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { currentUser } from "./api/apiEndpoints";
-import ApiFunction from "./api/apiFunction";
-import { handleError } from "./api/errorHandler";
+import { useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { FiShoppingCart } from "react-icons/fi";
 import CartSidebar from "./cartSidebar";
@@ -56,20 +52,14 @@ export default function NavHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [showNavbar, setShowNavbar] = useState(true);
-  const user = useSelector((state) => state.auth.userData);
-
   const pathname = usePathname();
   const router = useRouter();
-  const dispatch = useDispatch();
-  const isLogin = useSelector((state) => state?.auth?.isLogin);
   const { theme, setTheme } = useTheme();
   const [showTranslate, setShowTranslate] = useState(false);
   const translateRef = useRef(null);
   const [showCart, setShowCart] = useState(false);
-  const { get } = ApiFunction();
   const isMobile = useMediaQuery({ maxWidth: 640 });
-
-  console.log("isLogin", isLogin);
+  const { totalItems } = useSelector((state) => state.cart);
 
   // Custom scroll handler
   useEffect(() => {
@@ -106,21 +96,8 @@ export default function NavHeader() {
   };
 
   const handleLogout = () => {
-    dispatch(setLogout());
     router.push("/login");
   };
-
-  const getCurrentUser = debounce(async () => {
-    await get(currentUser)
-      .then((res) => {
-        if (res?.success) {
-          dispatch(setUserData(res?.data));
-        }
-      })
-      .catch((err) => {
-        dispatch(setLogout());
-      });
-  }, 300);
 
   // Handle click outside to close translate widget
   useEffect(() => {
@@ -148,7 +125,6 @@ export default function NavHeader() {
   }, [showTranslate]);
 
   useEffect(() => {
-    getCurrentUser();
     setIsActive(pathname);
   }, [pathname]);
 
@@ -242,9 +218,14 @@ export default function NavHeader() {
           <NavbarItem className="">
             <button
               onClick={() => setShowCart(!showCart)}
-              className="cursor-pointer"
+              className="cursor-pointer relative"
             >
               <MdOutlineShoppingBag size={22} />
+              {totalItems > 0 && (
+                <span className="absolute -top-2 -right-2 bg-brand-primary text-white text-xs rounded-full h-5 w-5 flex items-center justify-center poppins_semibold">
+                  {totalItems}
+                </span>
+              )}
             </button>
           </NavbarItem>
         </NavbarContent>

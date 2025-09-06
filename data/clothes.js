@@ -10,7 +10,7 @@ export const products = [
     onSale: true,
     rating: 4.8,
     reviews: 124,
-    sizes: ["XS", "S", "M", "L"],
+    sizes: ["One Size"],
     category: "Fashion",
     colors: ["#FF6B6B", "#4ECDC4", "#45B7D1"],
     href: "/products/1",
@@ -21,7 +21,7 @@ export const products = [
     price: 245.0,
     originalPrice: 320.0,
     images: [lady2, lady1], // Array of images
-    sizes: ["XS", "S", "XXL", "XL"],
+    sizes: ["One Size"],
     onSale: true,
     rating: 4.9,
     reviews: 89,
@@ -35,7 +35,7 @@ export const products = [
     price: 180.0,
     originalPrice: 240.0,
     images: [lady1, lady2], // Array of images
-    sizes: ["XS", "L"],
+    sizes: ["One Size"],
     onSale: true,
     rating: 4.7,
     reviews: 156,
@@ -49,7 +49,7 @@ export const products = [
     price: 180.0,
     originalPrice: 240.0,
     images: [lady2, lady1], // Array of images
-    sizes: ["S", "L", "M"],
+    sizes: ["One Size"],
     onSale: true,
     rating: 4.7,
     reviews: 156,
@@ -63,7 +63,7 @@ export const products = [
     price: 145.0,
     originalPrice: 189.0,
     images: [lady1, lady2], // Array of images
-    sizes: ["M", "S", "XL", "L"],
+    sizes: ["One Size"],
     onSale: true,
     rating: 4.8,
     reviews: 124,
@@ -77,7 +77,7 @@ export const products = [
     price: 245.0,
     originalPrice: 320.0,
     images: [lady2, lady1], // Array of images
-    sizes: ["M", "S", "XL", "L"],
+    sizes: ["One Size"],
     onSale: true,
     rating: 4.9,
     reviews: 89,
@@ -91,7 +91,7 @@ export const products = [
     price: 180.0,
     originalPrice: 240.0,
     images: [lady1, lady2], // Array of images
-    sizes: ["M", "XL"],
+    sizes: ["One Size"],
     onSale: true,
     rating: 4.7,
     reviews: 156,
@@ -105,7 +105,7 @@ export const products = [
     price: 180.0,
     originalPrice: 240.0,
     images: [lady2, lady1], // Array of images
-    sizes: ["S", "M", "XXL"],
+    sizes: ["One Size"],
     onSale: true,
     rating: 4.7,
     reviews: 156,

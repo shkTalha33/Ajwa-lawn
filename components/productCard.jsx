@@ -1,12 +1,28 @@
 import { ShoppingCart, Star } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/redux/slices/cartSlice";
+import toast from "react-hot-toast";
 
 export default function ProductCard({ product }) {
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [selectedColor, setSelectedColor] = useState(product.colors[0]);
+  const [selectedSize, setSelectedSize] = useState(product.sizes[0]);
+  const router = useRouter();
+  const dispatch = useDispatch();
 
   const handleAddToCart = (productId) => {
-    console.log(`Adding product ${productId} to cart`);
+    dispatch(
+      addToCart({
+        product,
+        selectedColor,
+        selectedSize,
+        quantity: 1,
+      })
+    );
+    toast.success(`${product.name} is add to cart successfully`);
   };
 
   return (
@@ -21,7 +37,12 @@ export default function ProductCard({ product }) {
     >
       {/* Product Image Container */}
       <div className="relative overflow-hidden rounded-t-xl sm:rounded-t-xl">
-        <div className="aspect-[5/5] relative">
+        <div
+          className="aspect-[5/5] relative cursor-pointer"
+          onClick={() => {
+            router.push(`/product/${product.id}`);
+          }}
+        >
           {/* First Image (Default) */}
           <Image
             src={product.images[0]}
@@ -83,9 +104,14 @@ export default function ProductCard({ product }) {
         {/* Color Options */}
         <div className="flex gap-2 sm:mb-4 mb-2">
           {product.colors.map((color, colorIndex) => (
-            <div
+            <button
               key={colorIndex}
-              className="w-3 h-3 sm:w-4 sm:h-4 rounded-full shadow-lg cursor-pointer hover:scale-110 transition-transform"
+              onClick={() => setSelectedColor(color)}
+              className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full shadow-lg cursor-pointer hover:scale-110 transition-transform border-2 ${
+                selectedColor === color
+                  ? "border-gray-900 dark:border-white"
+                  : "border-transparent"
+              }`}
               style={{ backgroundColor: color }}
             />
           ))}

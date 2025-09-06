@@ -27,8 +27,9 @@ const config = {
       },
       // box shadow
       boxShadow: {
-        light: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
-        medium: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+        xLight: "rgba(0, 0, 0, 0.04) 0px 3px 5px",
+        light: "rgba(149, 157, 165, 0.2) 0px 8px 24px",
+        medium: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",
         dark: "0 10px 15px -3px rgba(0, 0, 0, 0.2)",
       },
       backgroundImage: {

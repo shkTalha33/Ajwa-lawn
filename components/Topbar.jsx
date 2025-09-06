@@ -3,8 +3,8 @@ import React from "react";
 export default function Topbar() {
   return (
     <section>
-      <div className="dark:bg-white bg-black py-2 px-2">
-        <p className="dark:text-black poppins_medium text-white text-xs sm:text-sm md:text-base md:text-lg text-center">
+      <div className="dark:bg-white bg-black py-2.5 px-2">
+        <p className="dark:text-black poppins_semibold text-white text-xs sm:text-sm md:text-base text-center">
           Get the Latest Looks and Fashion Inspiration from Top Brands and
           Designers
         </p>
